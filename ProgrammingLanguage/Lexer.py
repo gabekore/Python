@@ -47,6 +47,7 @@ class Lexer:
   #---------------------------
   def advance(self):
     try:
+      self.skipWhiteSpace()
       # c = self.reader.read()
       c = self.reader.read()
       
@@ -85,3 +86,12 @@ class Lexer:
     
     self.val = num
 
+  #---------------------------
+  # 空白文字を読み飛ばす
+  #---------------------------
+  def skipWhiteSpace(self):
+    c = self.reader.read()
+    while c != -1 and str(c).isspace():
+      c = self.reader.read()
+    
+    self.reader.unread(c)
