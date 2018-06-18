@@ -31,6 +31,7 @@ class LexerReader:
     if self.unget_p:
       self.unget_p = False
     else:
+      # 1文字だけ取得
       self.ch = self.reader.read(1)
     
     return self.ch

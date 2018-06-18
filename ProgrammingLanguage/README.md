@@ -9,6 +9,14 @@
 - Python 3.5.1
 - PyCharm Community Edition 2017.2.4
 
+# デバッグ設定
+
+[Run] - [Edit Configurations...] - [Configuration] - [Script parameters:]
+
+ここにhoge.txtを指定している
+
+デバッグ実行するとhoge.txtを読み込むようになっている
+
 
 # 参考書籍
 
