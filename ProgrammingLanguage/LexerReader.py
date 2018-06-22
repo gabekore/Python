@@ -14,7 +14,6 @@ class LexerReader:
   unget_p = False
   ch = 0
   
-
   #---------------------------
   # コンストラクタ
   #

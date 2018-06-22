@@ -1,0 +1,41 @@
+#! /usr/bin/env python3
+
+class JTBinExpr:
+  # 演算子の種類
+  op = ""
+  # 左側の式
+  code1 = None
+  # 右側の式
+  code2 = None
+
+  #---------------------------
+  # コンストラクタ
+  #
+  # sio : io.StringIO
+  #---------------------------
+  def __init__(self, operator, c1, c2):
+    self.op = operator
+    self.code1 = c1
+    self.code2 = c2
+
+
+  #---------------------------
+  # 計算処理
+  #---------------------------
+  def run(self):
+    # code1を計算
+    c1 = self.code1.run()
+    # code2を計算
+    c2 = self.code2.run()
+    result = None
+
+    if self.op == "+":
+      result = c1.add(c2)
+    elif self.op == "-":
+      result = c1.sub(c2)
+    elif self.op == "*":
+      result = c1.multiply(c2)
+    elif self.op == "/":
+      result = c1.devide(c2)
+    
+    return result

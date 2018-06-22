@@ -54,12 +54,18 @@ class Lexer:
       if c == "":
         return False
       
-      if str(c).isdigit():
-        self.reader.unread(c)
-        self.lexDigit()
-        self.tok = Token.TokenType.INT
+      if c == ";" or c == "+" or \
+         c == "-" or c == "*" or \
+         c == "/" or c == "(" or c == ")":
+         # 演算記号等は文字そのものがトークンの種類を表す
+         self.tok = c
       else:
-        raise("数字じゃないです。")
+        if str(c).isdigit():
+          self.reader.unread(c)
+          self.lexDigit()
+          self.tok = Token.TokenType.INT
+        else:
+          raise("数字じゃないです。")
       
     except:
       print(traceback.format_exc())

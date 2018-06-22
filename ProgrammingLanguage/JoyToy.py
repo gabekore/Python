@@ -51,7 +51,7 @@ try:
     if code == None:
       break
     
-    print("result = " + code.toString())
+    print("result = " + code.run().toString())
   
   buffin.close()
 
